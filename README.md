@@ -1,37 +1,77 @@
-How do you get started with MCP in VS Code
+# MCP Weather Project
 
-# Create a new directory for our project
-uv init weather
-cd weather
+This project is a weather application built using the MCP framework and FastMCP server. It fetches weather alerts and forecasts from the National Weather Service (NWS) API and provides them via asynchronous tools.
 
-# Create virtual environment and activate it
-uv venv
-.venv\Scripts\activate
+## Features
 
-TIP: Check .python-verrsion file for python version > 3.10.0 and pyproject.toml file as well. 
+- Fetch active weather alerts for US states
+- Get detailed weather forecasts for specific latitude and longitude
+- Easy to run and extend using MCP framework
 
-# Install dependencies
-uv add "mcp[cli]" # not needed --> httpx
+## Prerequisites
 
-# Create our server file
-project_name
-server (folder)
-     weather.py(file)
+- Python 3.10 or higher
+- Virtual environment (recommended)
 
-TIP: Make sure you have python version> 3.10.0 and you 
-Don't forget to install the uv before start using it with "pip install uv"
+## Installation
 
-Run following cmd to run the server: 
-uv run mcp dev server/weather.py
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/mcp-weather-project.git
+   cd mcp-weather-project
+   ```
 
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   # On Windows
+   venv\Scripts\activate
+   # On Unix or MacOS
+   source venv/bin/activate
+   ```
 
-It will open the server in brower. 
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-now it's time to install the server
-~  uv run mcp install server/weather.py
+## Usage
 
+1. Run the MCP development server:
+   ```bash
+   uv run mcp dev server/weather.py
+   ```
+   This will start the server and open it in your browser.
 
-you will need claude desktop app installed on your machine. 
-Go to setting > developer section and there you can add the details 
+2. To install the server:
+   ```bash
+   uv run mcp install server/weather.py
+   ```
 
-similarly
+3. Make sure you have the Claude desktop app installed and configured for full functionality.
+
+## Project Structure
+
+- `server/weather.py`: Main server code with MCP tools for weather alerts and forecasts.
+- `main.py`: Entry point placeholder.
+- `README.md`: Project documentation.
+- `.gitignore`: Git ignore rules including virtual environment exclusion.
+- `pyproject.toml`: Python project configuration.
+
+## Notes
+
+- Ensure Python version is 3.10 or higher (see `.python-version` and `pyproject.toml`).
+- Virtual environment folder `venv/` is excluded from Git.
+- The project uses asynchronous HTTP requests with `httpx`.
+
+## Contributing
+
+Feel free to open issues or pull requests for improvements or bug fixes.
+
+## License
+
+Specify your license here.
+
+---
+
+For any questions or help, please contact the project maintainer.
